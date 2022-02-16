@@ -7,7 +7,11 @@ export const ThemeChanger = () => {
     <button
       className='cursor-pointer'
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
-      {theme === 'dark' ? 'Turn Light' : 'Turn Dark'}
+      {
+        theme === 'dark'
+          ? 'Turn Light'
+          : 'Turn Dark'
+      }
     </button>
   )
 }
