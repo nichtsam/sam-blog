@@ -1,12 +1,17 @@
+import dynamic from 'next/dynamic'
 import React from 'react'
+
+const ThemeChanger = dynamic(
+  async () => await (await import('@/components/layouts/ThemeChanger')).ThemeChanger,
+  { ssr: false })
 
 export const Header : React.FC = () => {
   return (
-    <nav className='w-screen h-16 grid grid-cols-12 items-center text-white text-lg'>
-        <p className='col-start-2 text-xl'>SAM BLOG</p>
-        <p className='col-start-9'>About</p>
-        <p>Showcase</p>
-        <p>Blog</p>
+    <nav className='w-screen h-16 grid grid-cols-12 items-center dark:text-white text-black text-lg'>
+      <p className='col-start-2 text-xl'>SAM BLOG</p>
+      <p className='col-start-9'>Blog</p>
+      <p>Chatroom</p>
+      <ThemeChanger />
     </nav>
   )
 }
