@@ -5,3 +5,11 @@
 body {
     @apply font-mono
 }
+
+@layer utilities {
+    .text-gardient-to-r {
+    @apply bg-gradient-to-r;
+    @apply bg-clip-text;
+    @apply text-transparent;
+    }
+}
