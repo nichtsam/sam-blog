@@ -3,4 +3,6 @@ const nextConfig = {
   reactStrictMode: true
 }
 
-module.exports = nextConfig
+const withSvgr = require('next-plugin-svgr')
+
+module.exports = withSvgr(nextConfig)
