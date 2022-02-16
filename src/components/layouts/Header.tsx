@@ -1,9 +1,5 @@
-import dynamic from 'next/dynamic'
 import React from 'react'
-
-const ThemeChanger = dynamic(
-  async () => await (await import('@/components/layouts/ThemeChanger')).ThemeChanger,
-  { ssr: false })
+import { ThemeChanger } from './ThemeChanger'
 
 export const Header : React.FC = () => {
   return (

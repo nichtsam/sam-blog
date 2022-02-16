@@ -1,14 +1,20 @@
 import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
 
 export const ThemeChanger = () => {
-  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+  const { resolvedTheme, setTheme } = useTheme()
+
+  useEffect(() => { setMounted(true) }, [])
+
+  if (!mounted) return null
 
   return (
     <button
       className='cursor-pointer'
-      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+      onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}>
       {
-        theme === 'dark'
+        resolvedTheme === 'dark'
           ? 'Turn Light'
           : 'Turn Dark'
       }
