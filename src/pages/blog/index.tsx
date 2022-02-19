@@ -10,7 +10,7 @@ export interface IBlogPageProps {
 
 const Blog : NextPage<IBlogPageProps> = ({ posts }) => {
   return (
-    <div className='p-5 m-auto max-w-screen-xl border-2 border-red-400'>
+    <div className='p-5 m-auto max-w-screen-xl'>
       {
         posts.map(post =>
           <BlogPostCard

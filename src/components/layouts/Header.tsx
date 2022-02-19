@@ -10,7 +10,7 @@ export interface INavItemProps extends ILinkProps {
 
 const NavItem : React.FC<ILinkProps> = ({ className, ...props }) => {
   const router = useRouter()
-  const isActive = router.asPath === props.href
+  const isActive = props.href === '/' ? router.asPath === '/' : router.asPath.startsWith(props.href)
 
   return <Link
     {...props}
@@ -24,7 +24,7 @@ const NavItem : React.FC<ILinkProps> = ({ className, ...props }) => {
 
 export const Header : React.FC = () => {
   return (
-    <nav className='flex justify-between items-center px-10 w-screen h-16 text-lg dark:text-gray-50'>
+    <nav className='flex justify-between items-center px-10 w-screen h-16 text-lg'>
       <NavItem
         href='/'>
         SAM BLOG

@@ -1,5 +1,6 @@
 import React from 'react'
 import NextLink from 'next/link'
+import classNames from 'classnames'
 
 export interface ILinkProps {
     href: string,
@@ -7,4 +8,4 @@ export interface ILinkProps {
 }
 
 export const Link : React.FC<ILinkProps> = ({ href, className, children }) =>
-  <NextLink href={href}><a className={className}>{children}</a></NextLink>
+  <NextLink href={href}><div className={classNames('cursor-pointer', className)}>{children}</div></NextLink>
