@@ -11,7 +11,7 @@ const Post : NextPage<IPostPageProps> = ({ post }) => {
   const MDXContent = useMDXComponent(post.body.code)
 
   return (
-    <div>
+    <div className='p-5 md'>
       <MDXContent />
     </div>
   )

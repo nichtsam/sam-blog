@@ -9,7 +9,7 @@ const meta = {
 
 export const Layout : React.FC = ({ children }) => {
   return (
-    <div className='min-h-screen bg-white dark:bg-black'>
+    <div className='min-h-screen bg-gray-50 dark:bg-black'>
       <Head>
         <title>{meta.title}</title>
         <meta
@@ -20,7 +20,7 @@ export const Layout : React.FC = ({ children }) => {
           content="follow, index" />
       </Head>
       <Header />
-      <div className='p-5 m-auto max-w-screen-xl border-2'>
+      <div>
         {children}
       </div>
     </div>
