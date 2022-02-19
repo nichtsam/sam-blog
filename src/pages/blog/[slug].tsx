@@ -3,11 +3,11 @@ import { GetStaticProps, NextPage } from 'next'
 import { getBlogPageUrl } from '.'
 import { allBlogPosts, BlogPost } from '@/contentlayer/generated'
 
-export interface IPostPageProps {
+export interface IBlogPostPageProps {
     post: BlogPost
 }
 
-const Post : NextPage<IPostPageProps> = ({ post }) => {
+const BlogPostPage : NextPage<IBlogPostPageProps> = ({ post }) => {
   const MDXContent = useMDXComponent(post.body.code)
 
   return (
@@ -17,7 +17,7 @@ const Post : NextPage<IPostPageProps> = ({ post }) => {
   )
 }
 
-export function getPostPageUrl (postSlug?: string): string {
+export function getBlogPostPageUrl (postSlug?: string): string {
   return `${getBlogPageUrl()}/${postSlug}`
 }
 
@@ -34,4 +34,4 @@ export const getStaticProps : GetStaticProps = async ({ params }) => {
   return { props: { post } }
 }
 
-export default Post
+export default BlogPostPage

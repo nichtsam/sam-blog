@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from '@/components/shared/Link'
 import type { BlogPost } from '@/contentlayer/generated'
-import { getPostPageUrl } from '@/pages/blog/[slug]'
+import { getBlogPostPageUrl } from '@/pages/blog/[slug]'
 
 export interface IBlogPostCardProps {
   post: BlogPost
@@ -9,7 +9,7 @@ export interface IBlogPostCardProps {
 
 export const BlogPostCard : React.FC<IBlogPostCardProps> = ({ post }) =>
   <Link
-    href={getPostPageUrl(post.slug)}>
+    href={getBlogPostPageUrl(post.slug)}>
     <div
       key={post.slug}
       className='p-5 mb-5 rounded-md border-2 border-black dark:border-gray-50'>

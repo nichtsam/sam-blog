@@ -8,7 +8,7 @@ export interface IBlogPageProps {
   posts: BlogPost[]
 }
 
-const Blog : NextPage<IBlogPageProps> = ({ posts }) => {
+const BlogPage : NextPage<IBlogPageProps> = ({ posts }) => {
   return (
     <div className='p-5 m-auto max-w-screen-xl'>
       {
@@ -32,4 +32,4 @@ export async function getStaticProps () {
   return { props: { posts } }
 }
 
-export default Blog
+export default BlogPage

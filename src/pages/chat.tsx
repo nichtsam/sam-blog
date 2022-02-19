@@ -1,8 +1,8 @@
-import type { NextPage } from 'next'
+import { NextPage } from 'next'
 import { WorkInProgress } from '@/components/layouts/WorkInProgress'
 
-const Home: NextPage = () => {
+const ChatPage : NextPage = () => {
   return <WorkInProgress />
 }
 
-export default Home
+export default ChatPage
