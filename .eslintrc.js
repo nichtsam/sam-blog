@@ -1,13 +1,18 @@
 module.exports = {
-  plugins: ['tailwindcss'],
+  plugins: [
+    'tailwindcss',
+    'jsx-a11y'
+  ],
   extends: [
     'prettier',
     'eslint-config-standard',
     'next/core-web-vitals',
-    'plugin:tailwindcss/recommended'
+    'plugin:tailwindcss/recommended',
+    'plugin:jsx-a11y/recommended'
   ],
   rules: {
     indent: ['error', 2],
+    quotes: ['error', 'single'],
     'max-len': ['error', { code: 120 }],
     'arrow-parens': ['error', 'as-needed'],
     'object-curly-newline': ['error', { multiline: true }],
