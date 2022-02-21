@@ -8,4 +8,12 @@ export interface ILinkProps {
 }
 
 export const Link : React.FC<ILinkProps> = ({ href, className, children }) =>
-  <NextLink href={href}><div className={classNames('cursor-pointer', className)}>{children}</div></NextLink>
+  <NextLink
+    href={href}
+    passHref>
+    <a
+      href='href' // workaround fot Nextjs Link & a11y eslint
+      className={classNames('cursor-pointer', className)}>
+      {children}
+    </a>
+  </NextLink>
