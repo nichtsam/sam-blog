@@ -11,7 +11,6 @@ module.exports = {
     'plugin:jsx-a11y/recommended'
   ],
   rules: {
-    indent: ['error', 2],
     quotes: ['error', 'single'],
     'max-len': ['error', { code: 120 }],
     'arrow-parens': ['error', 'as-needed'],
