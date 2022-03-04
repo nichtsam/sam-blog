@@ -14,6 +14,7 @@ module.exports = {
     quotes: ['error', 'single'],
     'max-len': ['error', { code: 120 }],
     'arrow-parens': ['error', 'as-needed'],
+    'object-curly-spacing': ['error', 'always'],
     'object-curly-newline': ['error', { multiline: true }],
     'array-bracket-newline': ['error', { multiline: true }],
     'function-paren-newline': ['error', 'multiline'],
