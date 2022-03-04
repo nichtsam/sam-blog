@@ -7,9 +7,9 @@ const meta = {
   description: 'Front-end Developer'
 }
 
-export const Layout : React.FC = ({ children }) => {
+export const PageContainer : React.FC = ({ children }) => {
   return (
-    <div className='min-h-screen bg-gray-50 dark:bg-black'>
+    <div className='min-h-screen background'>
       <Head>
         <title>{meta.title}</title>
         <meta

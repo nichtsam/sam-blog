@@ -1,5 +1,5 @@
 import React from 'react'
-import classNames from 'classnames'
+import clsx from 'clsx'
 import { useRouter } from 'next/router'
 import { ILinkProps, Link } from '@/components/shared/Link'
 
@@ -10,9 +10,9 @@ export const NavItem : React.FC<ILinkProps> = ({ className, ...props }) => {
   return <Link
     {...props}
     className={
-      classNames(
+      clsx(
         className,
-        isActive ? 'text-gardient-to-r from-violet-500 to-fuchsia-500' : ''
+        isActive ? 'from-violet-500 to-fuchsia-500 text-gardient-to-r' : ''
       )
     } />
 }

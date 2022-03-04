@@ -1,8 +1,9 @@
 import { NextPage } from 'next'
 import { WorkInProgress } from '@/components/layouts/WorkInProgress'
+import { PageContainer } from '@/components/layouts/PageContainer'
 
 const ChatPage : NextPage = () => {
-  return <WorkInProgress />
+  return (<PageContainer><WorkInProgress /></PageContainer>)
 }
 
 export default ChatPage

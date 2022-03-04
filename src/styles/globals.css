@@ -16,6 +16,10 @@ p,span {
     }
 }
 
+.background {
+    @apply bg-gray-50 dark:bg-black
+}
+
 .md > * {
     @apply my-5;
 }

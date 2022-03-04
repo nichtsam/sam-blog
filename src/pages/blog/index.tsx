@@ -3,6 +3,7 @@ import { compareDesc } from 'date-fns'
 import { allBlogPosts, BlogPost } from '@/contentlayer/generated'
 
 import { BlogPostCard } from '@/components/pages/blog/BlogPostCard'
+import { PageContainer } from '@/components/layouts/PageContainer'
 
 export interface IBlogPageProps {
   posts: BlogPost[]
@@ -10,14 +11,16 @@ export interface IBlogPageProps {
 
 const BlogPage : NextPage<IBlogPageProps> = ({ posts }) => {
   return (
-    <div className='p-5 m-auto max-w-screen-xl'>
-      {
-        posts.map(post =>
-          <BlogPostCard
-            key={post._id}
-            post={post} />)
-      }
-    </div>
+    <PageContainer>
+      <div className='p-5 m-auto max-w-screen-xl'>
+        {
+          posts.map(post =>
+            <BlogPostCard
+              key={post._id}
+              post={post} />)
+        }
+      </div>
+    </PageContainer>
   )
 }
 

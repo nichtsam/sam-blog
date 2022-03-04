@@ -2,6 +2,7 @@ import { useMDXComponent } from 'next-contentlayer/hooks'
 import { GetStaticProps, NextPage } from 'next'
 import { getBlogPageUrl } from '.'
 import { allBlogPosts, BlogPost } from '@/contentlayer/generated'
+import { PageContainer } from '@/components/layouts/PageContainer'
 
 export interface IBlogPostPageProps {
     post: BlogPost
@@ -11,9 +12,11 @@ const BlogPostPage : NextPage<IBlogPostPageProps> = ({ post }) => {
   const MDXContent = useMDXComponent(post.body.code)
 
   return (
-    <div className='p-5 md'>
-      <MDXContent />
-    </div>
+    <PageContainer>
+      <div className='p-5 md'>
+        <MDXContent />
+      </div>
+    </PageContainer>
   )
 }
 
