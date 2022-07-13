@@ -1,38 +1,38 @@
-import { useMDXComponent } from 'next-contentlayer/hooks'
-import { GetStaticProps, NextPage } from 'next'
-import { getBlogPageUrl } from '.'
-import { allBlogPosts, BlogPost } from '@/contentlayer/generated'
-import { PageContainer } from '@/components/layouts/PageContainer'
+import { useMDXComponent } from "next-contentlayer/hooks"
+import { GetStaticProps, NextPage } from "next"
+import { getBlogPageUrl } from "."
+import { allBlogPosts, BlogPost } from "@/contentlayer/generated"
+import { PageContainer } from "@/components/layouts/PageContainer"
 
 export interface IBlogPostPageProps {
-    post: BlogPost
+  post: BlogPost
 }
 
-const BlogPostPage : NextPage<IBlogPostPageProps> = ({ post }) => {
+const BlogPostPage: NextPage<IBlogPostPageProps> = ({ post }) => {
   const MDXContent = useMDXComponent(post.body.code)
 
   return (
     <PageContainer>
-      <div className='p-5 md'>
+      <div className="md p-5">
         <MDXContent />
       </div>
     </PageContainer>
   )
 }
 
-export function getBlogPostPageUrl (postSlug?: string): string {
+export function getBlogPostPageUrl(postSlug?: string): string {
   return `${getBlogPageUrl()}/${postSlug}`
 }
 
 export const getStaticPaths = async () => {
   return {
     paths: allBlogPosts.map(({ slug }) => ({ params: { slug } })),
-    fallback: false
+    fallback: false,
   }
 }
 
-export const getStaticProps : GetStaticProps = async ({ params }) => {
-  const post = allBlogPosts.find(post => post.slug === params?.slug)
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const post = allBlogPosts.find((post) => post.slug === params?.slug)
 
   return { props: { post } }
 }
