@@ -9,8 +9,7 @@ export interface IBlogPageProps {
   posts: BlogPost[]
 }
 
-const BlogPage: NextPage<IBlogPageProps> = ({ posts }) => {
-  return (
+const BlogPage: NextPage<IBlogPageProps> = ({ posts }) => (
     <PageContainer>
       <div className="m-auto max-w-screen-xl p-5">
         {posts.map((post) => (
@@ -19,16 +18,13 @@ const BlogPage: NextPage<IBlogPageProps> = ({ posts }) => {
       </div>
     </PageContainer>
   )
-}
 
 export function getBlogPageUrl(): string {
   return "/blog"
 }
 
 export async function getStaticProps() {
-  const posts = allBlogPosts.sort((a, b) => {
-    return compareDesc(new Date(a.publishedAt), new Date(b.publishedAt))
-  })
+  const posts = allBlogPosts.sort((a, b) => compareDesc(new Date(a.publishedAt), new Date(b.publishedAt)))
   return { props: { posts } }
 }
 

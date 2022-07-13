@@ -10,4 +10,7 @@ module.exports = {
     "plugin:jsx-a11y/recommended",
     "prettier",
   ],
+  rules: {
+    "arrow-body-style": ["error", "as-needed"],
+  },
 }

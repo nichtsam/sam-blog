@@ -24,12 +24,10 @@ export function getBlogPostPageUrl(postSlug?: string): string {
   return `${getBlogPageUrl()}/${postSlug}`
 }
 
-export const getStaticPaths = async () => {
-  return {
+export const getStaticPaths = async () => ({
     paths: allBlogPosts.map(({ slug }) => ({ params: { slug } })),
     fallback: false,
-  }
-}
+  })
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const post = allBlogPosts.find((post) => post.slug === params?.slug)

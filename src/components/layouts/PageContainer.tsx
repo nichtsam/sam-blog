@@ -9,8 +9,7 @@ const meta = {
 
 export const PageContainer: React.FC<{ children: ReactNode }> = ({
   children,
-}) => {
-  return (
+}) => (
     <div className="background min-h-screen">
       <Head>
         <title>{meta.title}</title>
@@ -21,4 +20,3 @@ export const PageContainer: React.FC<{ children: ReactNode }> = ({
       <div>{children}</div>
     </div>
   )
-}
