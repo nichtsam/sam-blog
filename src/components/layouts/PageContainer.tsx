@@ -1,28 +1,24 @@
-import Head from 'next/head'
-import React from 'react'
-import { Header } from './Header/Header'
+import Head from "next/head"
+import React, { ReactNode } from "react"
+import { Header } from "./Header/Header"
 
 const meta = {
-  title: 'Sam...',
-  description: 'Front-end Developer'
+  title: "Sam...",
+  description: "Front-end Developer",
 }
 
-export const PageContainer : React.FC = ({ children }) => {
+export const PageContainer: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
   return (
-    <div className='min-h-screen background'>
+    <div className="background min-h-screen">
       <Head>
         <title>{meta.title}</title>
-        <meta
-          content={meta.description}
-          name="description" />
-        <meta
-          name="robots"
-          content="follow, index" />
+        <meta content={meta.description} name="description" />
+        <meta name="robots" content="follow, index" />
       </Head>
       <Header />
-      <div>
-        {children}
-      </div>
+      <div>{children}</div>
     </div>
   )
 }
