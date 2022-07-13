@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useTheme } from "next-themes"
-import { Sun } from "@/assets/Sun"
-import { Moon } from "@/assets/Moon"
+import { Sun } from "@/components/shared/icons/Sun"
+import { Moon } from "@/components/shared/icons/Moon"
 
 export const ThemeChanger: React.FC = () => {
   const [mounted, setMounted] = useState(false)
