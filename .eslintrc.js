@@ -1,4 +1,7 @@
 module.exports = {
+  globals: {
+    React: "readonly",
+  },
   plugins: ["tailwindcss", "jsx-a11y"],
   extends: [
     "eslint-config-standard",
@@ -7,4 +10,4 @@ module.exports = {
     "plugin:jsx-a11y/recommended",
     "prettier",
   ],
-};
+}
