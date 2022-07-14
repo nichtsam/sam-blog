@@ -1,11 +1,6 @@
-import type { NextPage } from "next"
 import { WorkInProgress } from "@/components/layouts/WorkInProgress"
-import { PageContainer } from "@/components/layouts/PageContainer"
+import { TPageWithLayout } from "@/types/layout"
 
-const Home: NextPage = () => (
-  <PageContainer>
-    <WorkInProgress />
-  </PageContainer>
-)
+const Home: TPageWithLayout = () => <WorkInProgress />
 
 export default Home

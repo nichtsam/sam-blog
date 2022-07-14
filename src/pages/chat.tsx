@@ -1,11 +1,6 @@
-import { NextPage } from "next"
 import { WorkInProgress } from "@/components/layouts/WorkInProgress"
-import { PageContainer } from "@/components/layouts/PageContainer"
+import { TPageWithLayout } from "@/types/layout"
 
-const ChatPage: NextPage = () => (
-    <PageContainer>
-      <WorkInProgress />
-    </PageContainer>
-  )
+const ChatPage: TPageWithLayout = () => <WorkInProgress />
 
 export default ChatPage

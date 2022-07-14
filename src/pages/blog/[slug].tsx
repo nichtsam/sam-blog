@@ -2,7 +2,6 @@ import { useMDXComponent } from "next-contentlayer/hooks"
 import { GetStaticProps, NextPage } from "next"
 import { getBlogPageUrl } from "."
 import { allBlogPosts, BlogPost } from "@/contentlayer/generated"
-import { PageContainer } from "@/components/layouts/PageContainer"
 
 export interface IBlogPostPageProps {
   post: BlogPost
@@ -12,11 +11,9 @@ const BlogPostPage: NextPage<IBlogPostPageProps> = ({ post }) => {
   const MDXContent = useMDXComponent(post.body.code)
 
   return (
-    <PageContainer>
-      <div className="md p-5">
-        <MDXContent />
-      </div>
-    </PageContainer>
+    <div className="md p-5">
+      <MDXContent />
+    </div>
   )
 }
 
@@ -25,9 +22,9 @@ export function getBlogPostPageUrl(postSlug?: string): string {
 }
 
 export const getStaticPaths = async () => ({
-    paths: allBlogPosts.map(({ slug }) => ({ params: { slug } })),
-    fallback: false,
-  })
+  paths: allBlogPosts.map(({ slug }) => ({ params: { slug } })),
+  fallback: false,
+})
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const post = allBlogPosts.find((post) => post.slug === params?.slug)
