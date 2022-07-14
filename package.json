@@ -1,5 +1,5 @@
 {
-  "name": "sam-blog",
+  "name": "portfolio",
   "private": true,
   "scripts": {
     "dev": "next dev",
